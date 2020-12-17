@@ -24,4 +24,4 @@ Let's put everything together in matrix notation to better understand how we hav
 
 where *n*<sub>B</sub> is the # of observations = 0 and *n*<sub>G</sub> is the # of observations > 0. *Z* is a block matrix that contains matrices *Z*<sup>B</sup> and *Z*<sup>G</sup> filled with the *x* values in levels 1, ..., *J* and 0 otherwise.
 
-This repository includes the R code () to simulate the data and implement the hurdle model shown above. Also, it computes and plots the posterior distributions of (&beta;<sub>1</sub> + b<sub>j</sub>) by the function inla.make.lincombs() of INLA.
+This repository includes the R code (BinoGammaHurdleModel.R) to simulate the data and implement the hurdle model shown above. Also, it computes and plots the posterior distributions of (&beta;<sub>1</sub> + b<sub>j</sub>) by the function inla.make.lincombs() of INLA.
