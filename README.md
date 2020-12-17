@@ -1,5 +1,6 @@
 # Gamma-hurdle-model-using-INLA
-This repository 
+This repository provides the R code to implement a binomial-gamma hurdle mixed model in INLA using simulated data.
+
 ## Gamma-hurdle model
 There are many situations in which you may have a response variable that is positive and continuous but has zero inflation. For example, you are measuring the height of a tree species but there are not individuals at some sites. You may want to model the height using a gamma distribution, however, this distributions doesn’t allow for zero values. In such a case, you can model the zeros separately from the non-zeros using a binomial-gamma hurdle model.
 ## INLA
@@ -21,6 +22,6 @@ Let's put everything together in matrix notation to better understand how we hav
 
 ![Local functions](https://github.com/jmrmcode/Gamma-hurdle-model-using-INLA/blob/main/matrixnotation.png?raw=true)
 
-where *n*<sub>B</sub> is the # of observations = 0 and *n*<sub>G</sub> is the # of observations > 0. *Z* is a block matrix that contains matrices *Z*<sup>B</sup> and *Z*<sup>G</sup> filled with the *x* values in level *j* and 0 otherwise.
+where *n*<sub>B</sub> is the # of observations = 0 and *n*<sub>G</sub> is the # of observations > 0. *Z* is a block matrix that contains matrices *Z*<sup>B</sup> and *Z*<sup>G</sup> filled with the *x* values in levels 1, ..., *J* and 0 otherwise.
 
 This repository includes the R code () to simulate the data and implement the hurdle model shown above. Also, it computes and plots the posterior distributions of (&beta;<sub>1</sub> + b<sub>j</sub>) by the function inla.make.lincombs() of INLA.
