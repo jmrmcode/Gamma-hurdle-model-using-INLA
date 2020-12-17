@@ -3,13 +3,13 @@ This repository
 ## Gamma-hurdle model
 There are many situations in which you may have a response variable that is positive and continuous but has zero inflation. For example, you are measuring the height of a tree species but there are not individuals at some sites. You may want to model the height using a gamma distribution, however, this distributions doesn’t allow for zero values. In such a case, you can model the zeros separately from the non-zeros using a binomial-gamma hurdle model.
 ## INLA
-Integrated Nested Laplace Approximation (INLA) is a Bayesian modeling approach that easily accommodates complex data structures and it is very efficient in terms of computing time. See INLA website for more information. 
+Integrated Nested Laplace Approximation (INLA) is a Bayesian modeling approach that easily accommodates complex data structures and it is very efficient in terms of computing time. See [INLA website](https://www.r-inla.org/) for more information. 
 ## Model
 Let's *y* a continuous random variable that follows the pdf:
 
 ![Local functions](https://github.com/jmrmcode/Gamma-hurdle-model-using-INLA/blob/main/math-20201216.png?raw=true)
 
-where &pi; and &gamma; are a binomial and gamma distribution, respectively, and **x** and **&theta;** are covariate and parameter vectors.
+where &pi; and &gamma; stands for the binomial and gamma distributions, respectively, and **x** and **&theta;** are covariate and parameter vectors.
 
 We want to fit a hurdle varying slopes mixed model to *y*<sup>B</sup> (*y* = 1 when *y* > 0 and 0 otherwise) and *y*<sup>G</sup> (*y* > 0) (*i* = 1, ..., n and *j* = 1, ..., J) that includes one continuous predictor whose effect on *y* varies across *J* levels.
 
