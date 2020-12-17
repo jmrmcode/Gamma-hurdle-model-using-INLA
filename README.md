@@ -17,6 +17,8 @@ We want to fit a hurdle varying slopes mixed model to *y*<sup>B</sup> (*y* = 0) 
 
 where &beta;<sub>0</sub> is the intercept for the binomial (B) and gamma (G) components, respectively, &beta;<sub>1</sub> is the effect of *x* on *y*, *b*<sub>1</sub> is the deviation from &beta;<sub>j</sub> in level *j*, and *x* is the continuous predictor.
 
-Let's put everythong together in matrix notation:
+Let's put everything together in matrix notation to better understand how we have to provide the data to INLA:
 
-![Local functions](https://github.com/jmrmcode/Gamma-hurdle-model-using-INLA/blob/main/matrixNotation.png?raw=true)
+![Local functions](https://github.com/jmrmcode/Gamma-hurdle-model-using-INLA/blob/main/matrixnotation.png?raw=true)
+
+where *n*<sub>B</sub> is the # of observations = 0 and *n*<sub>G</sub> is the # of observations > 0. *Z* is a block matrix that contains matrices *Z*<sup>B</sup> and *Z*<sup>G</sup> filled with the *x* values in level *j* and 0 otherwise.
