@@ -11,7 +11,7 @@ Let's *y* a continuous random variable that follows the pdf:
 
 where &pi; and &gamma; are a binomial and gamma distribution, respectively, and **x** and **&theta;** are covariate and parameter vectors.
 
-We want to fit a hurdle varying slopes mixed model to *y*<sup>B</sup> (*y* = 0) and *y*<sup>G</sup> (*y* > 0) (*i* = 1, ..., n and *j* = 1, ..., J) that includes one continuous predictor whose effect on *y* varies across *J* levels.
+We want to fit a hurdle varying slopes mixed model to *y*<sup>B</sup> (*y* = 1 when *y* > 0 and 0 otherwise) and *y*<sup>G</sup> (*y* > 0) (*i* = 1, ..., n and *j* = 1, ..., J) that includes one continuous predictor whose effect on *y* varies across *J* levels.
 
 ![Local functions](https://github.com/jmrmcode/Gamma-hurdle-model-using-INLA/blob/main/modelEquations.png?raw=true)
 
