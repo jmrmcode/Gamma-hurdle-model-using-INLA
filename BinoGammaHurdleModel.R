@@ -3,7 +3,7 @@ require('INLA')
 set.seed(2345)
 
 # simulate continuous predictor
-x <- rnorm(400, mean = 0, sd = 2)
+x <- rnorm(400, mean = 0, sd = 1)
 
 ## binomial component
 XmatBF <- model.matrix(~ 1 + x)# X
@@ -16,11 +16,11 @@ n.sample <- 100
 n <- n.groups * n.sample
 RFB <- gl(n = n.groups, k = 100, length = n) 	
 XmatBR <- model.matrix(~ RFB:x - 1)# Z
-coefBR <- rnorm(4, mean = 0, sd = 2)
+coefBR <- rnorm(4, mean = 0, sd = 1)
 raneffectsB <- matrix(coefBR, 4, 1)# u
 # 
 lin.predB <- XmatBF %*% fixedEffectsB + XmatBR %*% raneffectsB
-binomResponse <- plogis(lin.predB)
+binomResponse <- rbinom(n = length(lin.predB), size = 1, prob = plogis(lin.predB))
 
 ## gamma component
 XmatGF <- model.matrix(~ 1 + x)# X
